@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import NewTodoForm from './NewTodoForm';
 import Todo from './Todo';
+import './TodoList.css';
 
 
 class TodoList extends Component {
@@ -31,8 +32,9 @@ class TodoList extends Component {
 
     render(){
         return(
-            <div>
-                <NewTodoForm createTask={this.createTask} />
+            <div className="TodoList">
+                <h1>Todo List! <span>A Simple React Todo List</span></h1>
+                
                 <ul>
                     {this.state.todos.map(todo => (
                         <Todo task={todo.task} remove = {this.remove}
@@ -40,6 +42,8 @@ class TodoList extends Component {
                         />
                     ))}
                 </ul>
+
+                <NewTodoForm createTask={this.createTask} />
             </div>
 
         )

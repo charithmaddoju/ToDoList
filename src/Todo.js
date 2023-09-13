@@ -33,15 +33,15 @@ class Todo extends Component{
 
     handleClick = () => {
         this.setState({isCompleted: !this.state.isCompleted});
-        
+
     }
     
     render(){
         let result;
         if(this.state.isEditing){
             result = (
-                <div>
-                    <form>
+                <div className="Todo">
+                    <form className="Todo-edit-form">
                         <input type="text" value={this.state.task} 
                         name = "task"
                         onChange={this.handleChange}/>
@@ -51,11 +51,17 @@ class Todo extends Component{
             )
         }else{
             result = (
-                <div>
-                    <li className={this.state.isCompleted ? "completed" : ""}
+                <div className="Todo">
+                    <li className={this.state.isCompleted ? "Todo-task completed" : "Todo-task"}
                     onClick={this.handleClick}>{this.props.task}</li>
-                    <button onClick={this.handleEdit}>Edit</button>
-                    <button onClick={this.handleDelete}>X</button>
+                    <div className="Todo-buttons">
+                        <button onClick={this.handleEdit} className="bi bi-trash">
+                            <i className="fas fa-pen"></i>
+                        </button>
+                        <button onClick={this.handleDelete}>
+                            <i className="fas fa-trash"></i>
+                        </button>
+                    </div>
                 </div>
             )
         }

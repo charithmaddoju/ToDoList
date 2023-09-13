@@ -2,3 +2,67 @@
     text-decoration: line-through;
     color: #cdcdcd;
 }
+
+.Todo{
+    display: flex;
+    margin: 0 -3rem 4px;
+    padding: 1rem 3rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.Todo-task.completed{
+    position: relative;
+    opacity: 0.6;
+}
+
+.Todo-task.completed:before{
+    content : '';
+    position: absolute;
+    top: 50%;
+    left: -0.5rem;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    animation : strikeitem 0.7s ease-out 0s forwards;
+}
+
+@keyframes strikeitem {
+    to {
+        width : calc(100% + 1rem)
+    }
+}
+
+.Todo-buttons {
+    flex-shrink: 0;
+    padding-left: 0.7em;
+}
+
+.Todo-buttons button{
+    border: none;
+    font-size: 1em;
+    margin: 0.4em;
+    background-color: none;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.Todo-buttons button i{
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.Todo-edit-form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 -3rem 4px;
+    padding: 1rem 3rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
