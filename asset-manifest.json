@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/charithmaddoju/ToDoList/static/css/main.3a212966.css",
+    "main.js": "/charithmaddoju/ToDoList/static/js/main.5bc4fa13.js",
+    "static/js/787.34d05ddd.chunk.js": "/charithmaddoju/ToDoList/static/js/787.34d05ddd.chunk.js",
+    "index.html": "/charithmaddoju/ToDoList/index.html",
+    "main.3a212966.css.map": "/charithmaddoju/ToDoList/static/css/main.3a212966.css.map",
+    "main.5bc4fa13.js.map": "/charithmaddoju/ToDoList/static/js/main.5bc4fa13.js.map",
+    "787.34d05ddd.chunk.js.map": "/charithmaddoju/ToDoList/static/js/787.34d05ddd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a212966.css",
+    "static/js/main.5bc4fa13.js"
+  ]
+}
