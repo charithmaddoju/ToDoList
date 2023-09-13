@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import NewTodoForm from './NewTodoForm';
-
+import Todo from './Todo';
 
 
 class TodoList extends Component {
@@ -14,6 +14,11 @@ class TodoList extends Component {
         this.setState({ todos: updatedTodos });
     }
 
+    updateTodos = (task) => {
+        const updatedTodos = this.state.todos.filter(todo => todo.task !== task);
+        this.setState({ todos: updatedTodos });
+    }
+
 
     
     render(){
@@ -21,8 +26,8 @@ class TodoList extends Component {
             <div>
                 <NewTodoForm createTask={this.createTask} />
                 <ul>
-                    {this.state.todos.map((todo,index) => (
-                        <li key={index}>{todo.task}</li>
+                    {this.state.todos.map(todo => (
+                        <Todo task={todo.task} updateTodos = {this.updateTodos}/>
                     ))}
                 </ul>
             </div>
