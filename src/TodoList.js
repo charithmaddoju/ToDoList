@@ -14,20 +14,30 @@ class TodoList extends Component {
         this.setState({ todos: updatedTodos });
     }
 
-    updateTodos = (task) => {
+    remove = (task) => {
         const updatedTodos = this.state.todos.filter(todo => todo.task !== task);
         this.setState({ todos: updatedTodos });
     }
 
+    update = (oldTask, newTask) => {
+        const updatedTodos = this.state.todos.map(todo => {
+            if(todo.task === oldTask){
+                return {...todo, task: newTask};
+            }
+            return todo;
+        });
+        this.setState({ todos: updatedTodos });
+    }
 
-    
     render(){
         return(
             <div>
                 <NewTodoForm createTask={this.createTask} />
                 <ul>
                     {this.state.todos.map(todo => (
-                        <Todo task={todo.task} updateTodos = {this.updateTodos}/>
+                        <Todo task={todo.task} remove = {this.remove}
+                        update = {this.update}
+                        />
                     ))}
                 </ul>
             </div>
